@@ -30,7 +30,7 @@ const Intro = () => {
     return (
         <div className="relative overflow-hidden">
             <div className="justify-center p-12 m-4 mt-7 shadow">
-                <h1 className="text-amber-900 align-middle text-3xl mb-4">Welcome!</h1>
+                <h1 className="text-amber-950 align-middle text-3xl mb-4">Welcome!</h1>
                 <p className="text-xl text-[#2C1332] pb-6 p-5">
                     Meet Onyin 😊 <br />
                     This is my first successful portfolio project 🎉 <br />
