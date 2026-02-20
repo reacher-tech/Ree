@@ -1,55 +1,70 @@
 import { Mail, Phone, Github, Linkedin } from 'lucide-react'
 
 const Footer = () => {
-  return(
-    <div className="relative overflow-hidden m-4 p-2 h-52">
+  return (
+    <div className="relative overflow-hidden m-4 p-2">
       
-      <div className="relative w-[97%] mx-auto h-full">
-        
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-300 via-pink-300 to-amber-300 opacity-75 blur-sm"></div>
-        
-        
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-l from-[#eedac7] via-[#452406] to-[#2C1332]   p-[1.5px] ">
-          <div className="bg-[#eedac7] rounded-lg h-full"></div>
-        </div>
-        
       
-        <div className="relative h-36 p-2 flex">
-          <div className='w-[70%] h-full'>
-          <h1 className="font-extrabold text-xl text-[#2C1332] pl-2 m-2">Ree`</h1>
-          <div className="m-4 sm:w-full">
-            <input 
-              type="email"
-              className="border-2 border-white w-[50%] p-2 outline-none "
-              placeholder="Enter your email"
-            />
-            <button 
-              className="bg-[#2c1332] text-white px-6 py-2 hover:bg-amber-800 transition-colors w-fit border-white border-2 rounded">
-              subscribe
-            </button>
+      <div className="absolute inset-2 rounded-2xl bg-gradient-to-r from-purple-300 via-pink-300 to-amber-300 opacity-60 blur-md pointer-events-none"></div>
+
+    
+      <div className="relative rounded-2xl overflow-hidden border border-[#c4a882]"
+           style={{ background: 'linear-gradient(135deg, #fdf6ee 0%, #f5e6d3 50%, #eedac7 100%)' }}>
+        
+        <div className="p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-12">
+
+          
+          <div className="flex flex-col gap-4 md:w-[55%]">
+            <h1 className="font-extrabold text-3xl md:text-4xl text-[#2C1332] tracking-tight leading-none">
+              Ree<span className="text-[#393048]">`</span>
+            </h1>
+
+            <p className="text-sm md:text-base text-[#5c3a1e] max-w-xs leading-relaxed">
+              Stay in the loop — get updates on my latest projects and work.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-2 mt-1">
+              <input
+                type="email"
+                className="flex-1 min-w-0 px-4 py-2.5 text-sm md:text-base rounded-lg border border-[#c4a882] bg-white/70 text-[#2C1332] placeholder-[#9a7a5a] outline-none focus:ring-2 focus:ring-[#2C1332]/30 transition"
+                placeholder="Enter your email"
+              />
+              <button className="shrink-0 bg-[#2C1332] text-white hover:bg-[#452406] active:scale-95 transition-all px-5 py-2.5 text-sm md:text-base rounded-lg font-semibold tracking-wide">
+                Subscribe
+              </button>
+            </div>
+
+            <p className="text-xs md:text-sm text-[#7a5030] mt-auto pt-2">
+              © 2026 Ree`. All rights reserved.
+            </p>
           </div>
-          <p className="text-2xl text-[#2C1332] pl-2 m-2 sm:text-sm md:text-2xl">© 2026 Ree`. All rights reserved.</p>
+
+          
+          <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-[#c4a882] to-transparent self-stretch"></div>
+          <div className="block md:hidden h-px bg-gradient-to-r from-transparent via-[#c4a882] to-transparent"></div>
+
+          
+          <div className="flex flex-col gap-3 md:w-[40%] justify-center">
+            {[
+              { href: "tel:+2348002880395", icon: <Phone size={18} />, label: "+234 800 288 0395" },
+              { href: "mailto:princessonyinyec12@gmail.com", icon: <Mail size={18} />, label: "princessonyinyec12@gmail.com" },
+              { href: "https://github.com/reacher-tech", icon: <Github size={18} />, label: "reacher-tech" },
+              { href: "https://www.linkedin.com/in/princess-aribodor-983b39291", icon: <Linkedin size={18} />, label: "Princess Aribodor" },
+            ].map(({ href, icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm md:text-base text-[#2C1332] hover:bg-[#2C1332]/8 hover:text-[#452406] transition-colors group"
+              >
+                <span className="shrink-0 text-[#362d46] group-hover:text-[#452406] transition-colors">{icon}</span>
+                <span className="truncate">{label}</span>
+              </a>
+            ))}
           </div>
-            <div className='flex flex-col gap-4 p-2'>
-            <a href="tel:+234810288-395" 
-            className='text-xl text-[#2C1335] hover:text-amber-950 transition-colors flex gap-4 border-b-[1px] border-[#f4e8f7]'>
-              <Phone size={24}/>+2348002880395
-            </a>
-            <a href=" " 
-            className='text-xl text-[#2C1335] hover:text-amber-950 transition-colors flex gap-4 border-b-[1px] border-[#f4e8f7]'>
-              <Mail size={24}/>princessonyinyec12@gmail.com
-            </a>
-            <a href="https://github.com/reacher-tech "
-             className='text-xl text-[#2C1335] hover:text-amber-950 transition-colors flex gap-4 border-b-[1px] border-[#f4e8f7] '>
-              <Github size={24}/>reacher-tech
-            </a>
-            <a href="https://www.linkedin.com/in/princess-aribodor-983b39291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " 
-            className='text-xl text-[#2C1335] hover:text-amber-950 transition-colors flex gap-4 border-b-[1px] border-[#f4e8f7]'>
-              <Linkedin  size={24}/> princess Aribodor
-            </a>
+
         </div>
-        </div>
-       
       </div>
     </div>
   )

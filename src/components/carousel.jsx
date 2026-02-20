@@ -137,7 +137,7 @@ const ItemSlide = () => {
                                                 <img 
                                                     src={Items.Image} 
                                                     alt={Items.title}
-                                                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                                                    className="w-full h-full object-cover"
                                                 />
                                             </div>
                                             
@@ -154,7 +154,7 @@ const ItemSlide = () => {
                                                         <p className="text-amber-800 mb-4 text-xs md:text-sm leading-relaxed line-clamp-3">
                                                             {Items.description}
                                                         </p>
-                                                        <button className="bg-amber-700 text-white px-4 md:px-6 py-2 rounded-full hover:bg-amber-800 transition-colors w-fit text-sm md:text-base">
+                                                        <button to='/' className="bg-amber-700 text-white px-4 md:px-6 py-2 rounded-full hover:bg-amber-800 transition-colors w-fit text-sm md:text-base">
                                                             Explore
                                                         </button>
                                                     </>

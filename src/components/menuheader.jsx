@@ -6,11 +6,11 @@ const MenuHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
-        { id: 1, icon: Dumbbell, label: "Fitness", path: "/fitness" },
-        { id: 2, icon: Coffee, label: "Breakfast", path: "/breakfast" },
-        { id: 3, icon: Cookie, label: "Snacks", path: "/snacks" },
-        { id: 4, icon: Utensils, label: "Meals", path: "/meals" },
-        { id: 5, icon: CupSoda, label: "Drinks", path: "/drinks" }
+        { id: 1, icon: Dumbbell, label: "Fitness", path: "/Recipes" },
+        { id: 2, icon: Coffee, label: "Breakfast", path: "/Recipes" },
+        { id: 3, icon: Cookie, label: "Snacks", path: "/Recipes" },
+        { id: 4, icon: Utensils, label: "Meals", path: "/Recipes" },
+        { id: 5, icon: CupSoda, label: "Drinks", path: "/Recipes" }
     ];
 
     return (
@@ -23,11 +23,11 @@ const MenuHeader = () => {
             <div className="flex justify-end p-4">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="p-2 bg-amber-700 hover:bg-amber-600 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                    className="p-2 outline-0 bg-amber-700 hover:bg-amber-600 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                     aria-label="Toggle sidebar"
                 >
                     <ChevronRight 
-                        className={`w-6 h-6 text-white transition-transform duration-300 ${
+                        className={`w-6 h-6  text-white transition-transform duration-300 ${
                             isOpen ? 'rotate-180' : ''
                         }`}
                     />
@@ -44,7 +44,7 @@ const MenuHeader = () => {
                             to={item.path}
                             className={({ isActive }) =>
                                 `flex items-center gap-4 p-4 rounded-lg transition-all duration-300 group ${
-                                    isActive ? 'bg-amber-700 shadow-lg' : ''
+                                    isActive ? 'shadow-lg' : ''
                                 } ${isOpen ? 'justify-start' : 'justify-center'}`
                             }
                         >
@@ -76,7 +76,7 @@ const MenuHeader = () => {
                     </div>
                     {isOpen && (
                         <div className="text-white text-sm overflow-hidden">
-                            <p className="font-semibold">Ree Recipes</p>
+                            <p className="font-semibold"> <NavLink to='/'>Ree Recipes </NavLink></p>
                             <p className="text-xs text-amber-200">v1.0</p>
                         </div>
                     )}

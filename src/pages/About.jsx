@@ -1,7 +1,8 @@
 import Layout from "../layouts/mainlayout";
 import menuimg from '../assets/menuimg.jpg';
 import recipeimg from '../assets/recipeimg.jpg';
-import logoimg from '../assets/logoimg.png'
+import logoimg from '../assets/logoimg.png';
+import Footer from "../components/footer";
 
 const About = () => {
     const aboutSections = [
@@ -101,6 +102,7 @@ const About = () => {
                     </div>
                 </div>
             ))}
+            <Footer/>
         </Layout>
     );
 }

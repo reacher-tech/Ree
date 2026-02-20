@@ -21,7 +21,7 @@ const Header = () => {
                     /> 
                     
                    </NavLink>
-                    <div className="relative hidden sm:block flex-1 max-w-md lg:max-w-lg">
+                    <div className="relative flex-1 max-w-md lg:max-w-lg">
                         <svg 
                             className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-amber-700" 
                             fill="none" 
@@ -41,13 +41,14 @@ const Header = () => {
                
                 <nav className='hidden lg:flex'>
                     <ul className='flex gap-6 xl:gap-8 text-lg xl:text-xl text-white'>
-                        <li>
+                         <li>
                             <NavLink 
-                        to='/Home'
+                        to='/'
                         className='cursor-pointer hover:text-[#d99470] transition-colors duration-300 border-b-2 border-transparent hover:border-amber-900 pb-1'>
-                            Home
+                            Ree
                         </NavLink>
-                        </li>
+                          </li>
+                        
                         <li>
                         <NavLink 
                         to='/About'
@@ -81,37 +82,19 @@ const Header = () => {
                 </button>
             </div>
 
-           
-            <div className="sm:hidden px-4 pb-4">
-                <div className="relative w-full">
-                    <svg 
-                        className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-amber-700" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input 
-                        type='search' 
-                        placeholder='search recipes' 
-                        className='w-full pl-10 pr-4 py-2 rounded-full bg-amber-50 text-[#6B3E26] placeholder-[#D4A373] focus:outline-none focus:ring-2 focus:ring-amber-600 text-sm'
-                    />
-                </div>
-            </div>
-
           
             <nav className={`lg:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-64' : 'max-h-0'}`}>
                 <ul className='flex flex-col bg-[#2C1332]/95 text-white'>
-                    <li 
+                      <li 
                         onClick={() => setIsMenuOpen(false)}
                         className='px-6 py-4 hover:bg-white/10 hover:text-[#d99470] transition-colors duration-300 border-b border-white/10 cursor-pointer'
                     >
                         <NavLink
-                        to='/Home'>
-                        Home
+                        to='/'>
+                        Ree
                         </NavLink>
                     </li>
+                        
                     <li 
                         onClick={() => setIsMenuOpen(false)}
                         className='px-6 py-4 hover:bg-white/10 hover:text-[#d99470] transition-colors duration-300 border-b border-white/10 cursor-pointer'

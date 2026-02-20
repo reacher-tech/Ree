@@ -1,4 +1,6 @@
 import MenuLayout from "../layouts/menulayout";
+import { useState } from "react";
+import RecipeModal from "../components/modals/RecipeModal";
 import MenuCards from "../components/menucards";
 import oatchiabowl from '../assets/oatchiabowl.jpg';
 import eggtoast from '../assets/eggtoast.jpg';
@@ -14,8 +16,12 @@ import oatsmoothies from '../assets/oatsmoothie.jpg';
 import riceveggies from '../assets/riceveggies.jpg';
 import millet from '../assets/millet.jpg';
 import eggmuffin from '../assets/eggmuffin.jpg';
+import Second from '../assets/Second.png';
+import Seventh from '../assets/Seventh.jpg';
 
-const BreakFastRecipe = () => {
+const Recipe = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
     const recipes = [
         
   {
@@ -44,22 +50,10 @@ const BreakFastRecipe = () => {
   servings: "1",
   nutrition: { protein: "20g", carbs: "30g", fats: "16g", fiber: "5g" },
 },
-{
-  id: 3,
-  image: smoothie,
-  title: "Fruit Smoothie Bowl",
-  description: "Blended fruits topped with seeds for a refreshing start.",
-  calories: 280,
-  time: "15 mins",
-  digestionTime: "Mid-morning",
-  ingredients: ["banana", "berries", "yogurt"],
-  instructions: ["Blend fruits and yogurt, pour into bowl, add toppings."],
-  servings: "1",
-  nutrition: { protein: "9g", carbs: "45g", fats: "6g", fiber: "7g" },
-},
+
 {
   id: 4,
-  image: null, //check home page for pic
+  image: Seventh, //check home page for pic
   title: "Peanut Butter Banana Toast",
   description: "Quick energy-boosting toast with healthy fats.",
   calories: 330,
@@ -202,7 +196,7 @@ const BreakFastRecipe = () => {
 },
 {
   id: 15,
-  image: null,// use the peanut bowl
+  image: Second,// use the peanut bowl
   title: "Peanut Oat Energy Bowl",
   description: "Sustained energy breakfast bowl.",
   calories: 400,
@@ -254,7 +248,7 @@ const BreakFastRecipe = () => {
 },
 {
   id: 19,
-  image: null, //se oatpic
+  image: Second, 
   title: "Fruit & Nut Oats",
   description: "Balanced oats with crunch and sweetness.",
   calories: 370,
@@ -267,7 +261,7 @@ const BreakFastRecipe = () => {
 },
 {
   id: 20,
-  image: null, //use existing fitting 
+  image: Seventh, //use existing fitting 
   title: "Toast with Honey & Seeds",
   description: "Light breakfast with quick energy.",
   calories: 260,
@@ -291,40 +285,46 @@ const BreakFastRecipe = () => {
   servings: "1",
   nutrition: { protein: "9g", carbs: "48g", fats: "6g", fiber: "5g" },
 },
-{
-  id: 22,
-  image: smoothie,
-  title: "Breakfast Protein Shake",
-  description: "Fast protein-rich breakfast drink.",
-  calories: 290,
-  time: "5 mins",
-  digestionTime: "Post-wakeup",
-  ingredients: ["protein powder", "banana", "milk"],
-  instructions: ["Blend all ingredients."],
-  servings: "1",
-  nutrition: { protein: "24g", carbs: "28g", fats: "6g", fiber: "3g" },
-}
 
     ];
 
+
+     const openModal = (recipe) => {
+    setSelectedRecipe(recipe);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedRecipe(null);
+  };
     return (
         <MenuLayout>
             <div className=" w-full max-w-7xl mx-auto p-6 md:p-8 ">
-                <h1 className="text-4xl font-bold text-amber-900 mb-8">
+                <h1 className="text-4xl font-bold text-[#2C1332] mb-8">
                     Breakfast Recipes
                 </h1>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 ">
-                    {recipes.map((recipe) => (
-                        <MenuCards
-                            key={recipe.id}
-                            {...recipe}
-                        />
-                    ))}
-                </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+  {recipes.map((recipe) => (
+    <MenuCards
+      key={recipe.id}
+      {...recipe}
+      onOpen={openModal} 
+    />
+  ))}
+</div>
+
+{isModalOpen && selectedRecipe && (
+  <RecipeModal
+    modalData={selectedRecipe}
+    onClose={closeModal}
+  />
+)}
+
             </div>
         </MenuLayout>
     );
 };
 
-export default BreakFastRecipe;
+export default Recipe;

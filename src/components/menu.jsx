@@ -15,33 +15,37 @@ const Menu= ()=> {
         <ul className="w-full h-full flex justify-evenly ">
         <li>
           <NavLink
-          to='/Breakfastmenu'>
+          to='/Recipes'>
              <Dumbbell className="w-15 h-10 text-[#6b3e26]"/>
              proteinbars
             </NavLink> 
              </li>
 
              <li>
-          <NavLink>
+          <NavLink
+          to='/Recipes'>
              <Coffee className="w-15 h-10 text-[#6b3e26]"/>
              breakfast
             </NavLink> 
              </li>
             
             <li>
-          <NavLink>
+          <NavLink
+          to='/Recipes'>
              <Cookie className="w-15 h-10 text-[#6b3e26]"/>
             snacks
             </NavLink> 
              </li>
              <li>
-          <NavLink>
+          <NavLink
+          to='/Recipes'>
              <Utensils className="w-15 h-10 text-[#6b3e26]"/>
              lunch
             </NavLink> 
              </li>
              <li>
-          <NavLink>
+          <NavLink
+          to='/Recipes'>
              <CupSoda className="w-15 h-10 text-[#6b3e26]"/>
              Drinks
             </NavLink> 

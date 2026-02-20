@@ -1,6 +1,5 @@
 import First from '../assets/First.jpg';
 import Second from '../assets/Second.png';
-import Third from '../assets/Third.jpg';
 import Fourth from '../assets/Fourth.jpg';
 import Fifth from '../assets/Fifth.jpg';
 import Seventh from '../assets/Seventh.jpg';
@@ -16,7 +15,7 @@ const Hero = () => {
     ];
 
     return(
-        <div className='relative w-full flex flex-col md:flex-row p-8 gap-8 md:h-98 sm:h-[20%] md:mt-12 sm:mt-6'>
+        <div className='relative w-full sm:w-[90%] flex flex-col md:flex-row p-8 gap-8 md:h-98 sm:h-[20%] md:mt-12 sm:mt-6'>
             
             <div className='w-full md:w-[35%] flex flex-col justify-center h-full'>
                 <h1 className='text-2xl md:text-5xl font-bold text-amber-900 mb-6'>
@@ -30,7 +29,7 @@ const Hero = () => {
             </div>
             
         
-            <div className="w-full md:w-[65%] grid grid-cols-4 row-auto-[100px] gap-4 h-full border-l-[2px] border-[#672218] pl-2.5">
+            <div className="w-full md:w-[65%] grid grid-cols-4 row-auto-[100px] gap-4 md:h-full sm:h-56 border-l-[2px] border-[#672218] pl-2.5">
                 {Griditems.map((item) => (
                     <div 
                         key={item.id}
