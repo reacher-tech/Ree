@@ -22,11 +22,11 @@ const LandingPage = ()=> {
     ]
     return(
         <Layout>
-             <Hero/>;
-             <Menu/>;
-              <Toppings/>;
+             <Hero/>
+             <Menu/>
+              <Toppings/>
               
-             <ItemSlide/>;
+             <ItemSlide/>
              <FeatureSection
          image={features}
          imageAlt='menu Feature'
@@ -34,7 +34,7 @@ const LandingPage = ()=> {
          features={FeaturesData}
          imageOnLeft={true}
          />
-             <Footer/>;
+             <Footer/>
            
         
         </Layout>
