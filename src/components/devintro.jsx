@@ -41,11 +41,11 @@ const Intro = () => {
                 <span className="py-10 underline decoration-double text-amber-900 text-2xl">would you like to contact me</span>
             </div>
             
-            <div className="flex justify-around w-[70%] p-10">
+            <div className="flex justify-around md:w-[70%] w-full p-10 md:gap-0 gap-3">
                 {contactButton.map((button, index) => (
                     <button
                         key={button.id}  
-                        className="px-4 py-2 bg-[#2C1332] text-white rounded hover:px-6 hover:bg-amber-950 shadow"
+                        className="px-4 py-2 bg-[#2C1332] text-white rounded hover:px-6 hover:bg-amber-950 shadow "
                         onClick={() => handleClick(button.id, button)}
                     >
                         {button.title}
